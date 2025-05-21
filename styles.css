@@ -1,0 +1,367 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    background-color: #3b5998;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+/* Secciones principales */
+section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #3b5998;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Formulario de productos */
+.product-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    align-items: end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+#add-product {
+    background-color: #3b5998;
+}
+
+#add-product:hover {
+    background-color: #2d4373;
+}
+
+/* Tabla de productos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Resumen de venta */
+.summary-table {
+    max-width: 400px;
+    margin-left: auto;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-label {
+    font-weight: 500;
+}
+
+.total-row {
+    font-weight: bold;
+    font-size: 18px;
+    border-top: 2px solid #333;
+    border-bottom: none;
+    padding-top: 15px;
+    color: #3b5998;
+}
+
+/* Sección de acciones */
+.actions-section {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+#generate-pdf {
+    background-color: #ff9800;
+}
+
+#generate-pdf:hover {
+    background-color: #f57c00;
+}
+
+#new-sale {
+    background-color: #2196F3;
+}
+
+#new-sale:hover {
+    background-color: #0b7dda;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Estilos para facturas vacías */
+.empty-table {
+    text-align: center;
+    padding: 20px 0;
+    color: #777;
+    font-style: italic;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .actions-section {
+        flex-direction: column;
+    }
+    
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Estilos para el catálogo de productos */
+
+/* Grupo del input con botón */
+.product-name-group {
+    position: relative;
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-with-button input {
+    flex-grow: 1;
+    padding-right: 40px;
+}
+
+#show-catalog-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #3b5998;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#show-catalog-btn:hover {
+    background-color: rgba(59, 89, 152, 0.1);
+    border-radius: 50%;
+}
+
+/* Contenedor de categorías */
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.category-btn {
+    background-color: #f0f2f5;
+    color: #3b5998;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.category-btn:hover {
+    background-color: #e4e6eb;
+}
+
+.category-btn.active {
+    background-color: #3b5998;
+    color: white;
+    border-color: #3b5998;
+}
+
+/* Contenedor del catálogo */
+.product-catalog-container {
+    position: absolute;
+    width: 100%;
+    max-width: 600px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    display: none;
+    max-height: 350px;
+    overflow-y: auto;
+    margin-top: 5px;
+}
+
+/* Lista de productos */
+.product-catalog-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Item de producto */
+.product-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.product-item:hover {
+    background-color: #f5f7fa;
+}
+
+.product-item:last-child {
+    border-bottom: none;
+}
+
+.product-item-name {
+    font-weight: 500;
+}
+
+.product-item-price {
+    color: #666;
+    text-align: right;
+}
+
+.product-item-category {
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+    text-align: right;
+}
+
+/* Mensaje de no resultados */
+.no-results {
+    padding: 15px;
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-catalog-container {
+        max-width: 100%;
+    }
+    
+    .product-item {
+        grid-template-columns: 1fr auto;
+    }
+    
+    .product-item-category {
+        grid-column: 1 / -1;
+        text-align: left;
+    }
+}

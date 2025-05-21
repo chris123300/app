@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Facturación - Panadería</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="catalog_styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Facturación - Panadería</h1>
+        </header>
+        
+        <main>
+            <section class="form-section">
+                <h2>Agregar Producto</h2>
+                <div class="product-form">
+                    <div class="form-group product-name-group">
+                        <label for="product-name">Nombre del Producto:</label>
+                        <div class="input-with-button">
+                            <input type="text" id="product-name" placeholder="Ej: Pan Francés" autocomplete="off">
+                            <button id="show-catalog-btn" title="Mostrar catálogo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-price">Precio Unitario ($):</label>
+                        <input type="number" id="product-price" placeholder="Ej: 1500" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-quantity">Cantidad:</label>
+                        <input type="number" id="product-quantity" placeholder="Ej: 3" min="1" value="1">
+                    </div>
+                    <button id="add-product">Agregar Producto</button>
+                </div>
+                
+                <!-- Catálogo de productos -->
+                <div id="categories-container" class="categories-container"></div>
+                <div id="product-catalog-container" class="product-catalog-container">
+                    <ul id="product-catalog-list" class="product-catalog-list"></ul>
+                </div>
+            </section>
+
+            <section class="product-list-section">
+                <h2>Productos en la Factura</h2>
+                <table id="products-table">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio Unitario</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-list">
+                        <!-- Los productos se agregarán dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="summary-section">
+                <h2>Resumen de la Venta</h2>
+                <div class="summary-table">
+                    <div class="summary-row">
+                        <div class="summary-label">Subtotal:</div>
+                        <div class="summary-value" id="subtotal">$0</div>
+                    </div>
+                    <div class="summary-row" id="discount-row">
+                        <div class="summary-label">Descuento (10%):</div>
+                        <div class="summary-value" id="discount">$0</div>
+                    </div>
+                    <div class="summary-row">
+                        <div class="summary-label">Valor Neto:</div>
+                        <div class="summary-value" id="net-value">$0</div>
+                    </div>
+                    <div class="summary-row">
+                        <div class="summary-label">IVA (19%):</div>
+                        <div class="summary-value" id="iva">$0</div>
+                    </div>
+                    <div class="summary-row total-row">
+                        <div class="summary-label">TOTAL:</div>
+                        <div class="summary-value" id="total">$0</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="actions-section">
+                <button id="generate-pdf">Generar PDF</button>
+                <button id="new-sale">Nueva Venta</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>Sistema de Facturación para Panadería - 2025</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+    <script src="catalog.js"></script>
+</body>
+</html>
